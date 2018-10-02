@@ -1,0 +1,2297 @@
+type City {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  name: String
+  country: String
+  lat: Float
+  lng: Float
+  country__r: Country
+}
+
+type CityAggregator {
+  count: Int
+  sum: CityAggregatorSum
+  avg: CityAggregatorAvg
+  min: CityAggregatorMin
+  max: CityAggregatorMax
+}
+
+type CityAggregatorAvg {
+  lat: Float
+  lng: Float
+}
+
+type CityAggregatorMax {
+  lat: Float
+  lng: Float
+}
+
+type CityAggregatorMin {
+  lat: Float
+  lng: Float
+}
+
+type CityAggregatorSum {
+  lat: Float
+  lng: Float
+}
+
+type CityConnection {
+  values: [City]
+  groupBy: CityGroupBy
+  aggregate: CityAggregator
+}
+
+type CityConnection_id {
+  key: ID
+  connection: CityConnection
+}
+
+type CityConnectionCountry {
+  key: String
+  connection: CityConnection
+}
+
+type CityConnectionCountry__r {
+  key: ID
+  connection: CityConnection
+}
+
+type CityConnectionCreatedAt {
+  key: DateTime
+  connection: CityConnection
+}
+
+type CityConnectionLat {
+  key: Float
+  connection: CityConnection
+}
+
+type CityConnectionLng {
+  key: Float
+  connection: CityConnection
+}
+
+type CityConnectionName {
+  key: String
+  connection: CityConnection
+}
+
+type CityConnectionUpdatedAt {
+  key: DateTime
+  connection: CityConnection
+}
+
+type CityGroupBy {
+  _id: [CityConnection_id]
+  createdAt: [CityConnectionCreatedAt]
+  updatedAt: [CityConnectionUpdatedAt]
+  name: [CityConnectionName]
+  country: [CityConnectionCountry]
+  lat: [CityConnectionLat]
+  lng: [CityConnectionLng]
+  country__r: [CityConnectionCountry__r]
+}
+
+input CityInput {
+  name: String
+  country: String
+  lat: Float
+  lng: Float
+  country__r: ID
+}
+
+"""Contact"""
+type Contact {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  Name: String
+  Description: String
+  Email: String
+  Phone: String
+  owner: UsersPermissionsUser
+  createdBy: UsersPermissionsUser
+  Id: String
+}
+
+type ContactAggregator {
+  count: Int
+}
+
+type ContactConnection {
+  values: [Contact]
+  groupBy: ContactGroupBy
+  aggregate: ContactAggregator
+}
+
+type ContactConnection_id {
+  key: ID
+  connection: ContactConnection
+}
+
+type ContactConnectionCreatedAt {
+  key: DateTime
+  connection: ContactConnection
+}
+
+type ContactConnectionCreatedBy {
+  key: ID
+  connection: ContactConnection
+}
+
+type ContactConnectionDescription {
+  key: String
+  connection: ContactConnection
+}
+
+type ContactConnectionEmail {
+  key: String
+  connection: ContactConnection
+}
+
+type ContactConnectionId {
+  key: String
+  connection: ContactConnection
+}
+
+type ContactConnectionName {
+  key: String
+  connection: ContactConnection
+}
+
+type ContactConnectionOwner {
+  key: ID
+  connection: ContactConnection
+}
+
+type ContactConnectionPhone {
+  key: String
+  connection: ContactConnection
+}
+
+type ContactConnectionUpdatedAt {
+  key: DateTime
+  connection: ContactConnection
+}
+
+type ContactGroupBy {
+  _id: [ContactConnection_id]
+  createdAt: [ContactConnectionCreatedAt]
+  updatedAt: [ContactConnectionUpdatedAt]
+  Name: [ContactConnectionName]
+  Description: [ContactConnectionDescription]
+  Email: [ContactConnectionEmail]
+  Phone: [ContactConnectionPhone]
+  owner: [ContactConnectionOwner]
+  createdBy: [ContactConnectionCreatedBy]
+  Id: [ContactConnectionId]
+}
+
+input ContactInput {
+  Name: String
+  Description: String
+  Email: String
+  Phone: String
+  owner: ID
+  createdBy: ID
+  Id: String
+}
+
+type Country {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  name: String
+  latlng: String
+  altSpellings: String
+  area: Int
+  borders: String
+  callingCode: String
+  capital: String
+  cca2: String
+  cca3: String
+  ccn3: String
+  cioc: String
+  currency: String
+  demonym: String
+  landlocked: Boolean
+  languages: String
+  region: String
+  subregion: String
+  tld: String
+  translations: String
+}
+
+type CountryAggregator {
+  count: Int
+  sum: CountryAggregatorSum
+  avg: CountryAggregatorAvg
+  min: CountryAggregatorMin
+  max: CountryAggregatorMax
+}
+
+type CountryAggregatorAvg {
+  area: Float
+}
+
+type CountryAggregatorMax {
+  area: Float
+}
+
+type CountryAggregatorMin {
+  area: Float
+}
+
+type CountryAggregatorSum {
+  area: Float
+}
+
+type CountryConnection {
+  values: [Country]
+  groupBy: CountryGroupBy
+  aggregate: CountryAggregator
+}
+
+type CountryConnection_id {
+  key: ID
+  connection: CountryConnection
+}
+
+type CountryConnectionAltSpellings {
+  key: String
+  connection: CountryConnection
+}
+
+type CountryConnectionArea {
+  key: Int
+  connection: CountryConnection
+}
+
+type CountryConnectionBorders {
+  key: String
+  connection: CountryConnection
+}
+
+type CountryConnectionCallingCode {
+  key: String
+  connection: CountryConnection
+}
+
+type CountryConnectionCapital {
+  key: String
+  connection: CountryConnection
+}
+
+type CountryConnectionCca2 {
+  key: String
+  connection: CountryConnection
+}
+
+type CountryConnectionCca3 {
+  key: String
+  connection: CountryConnection
+}
+
+type CountryConnectionCcn3 {
+  key: String
+  connection: CountryConnection
+}
+
+type CountryConnectionCioc {
+  key: String
+  connection: CountryConnection
+}
+
+type CountryConnectionCreatedAt {
+  key: DateTime
+  connection: CountryConnection
+}
+
+type CountryConnectionCurrency {
+  key: String
+  connection: CountryConnection
+}
+
+type CountryConnectionDemonym {
+  key: String
+  connection: CountryConnection
+}
+
+type CountryConnectionLandlocked {
+  key: Boolean
+  connection: CountryConnection
+}
+
+type CountryConnectionLanguages {
+  key: String
+  connection: CountryConnection
+}
+
+type CountryConnectionLatlng {
+  key: String
+  connection: CountryConnection
+}
+
+type CountryConnectionName {
+  key: String
+  connection: CountryConnection
+}
+
+type CountryConnectionRegion {
+  key: String
+  connection: CountryConnection
+}
+
+type CountryConnectionSubregion {
+  key: String
+  connection: CountryConnection
+}
+
+type CountryConnectionTld {
+  key: String
+  connection: CountryConnection
+}
+
+type CountryConnectionTranslations {
+  key: String
+  connection: CountryConnection
+}
+
+type CountryConnectionUpdatedAt {
+  key: DateTime
+  connection: CountryConnection
+}
+
+type CountryGroupBy {
+  _id: [CountryConnection_id]
+  createdAt: [CountryConnectionCreatedAt]
+  updatedAt: [CountryConnectionUpdatedAt]
+  name: [CountryConnectionName]
+  latlng: [CountryConnectionLatlng]
+  altSpellings: [CountryConnectionAltSpellings]
+  area: [CountryConnectionArea]
+  borders: [CountryConnectionBorders]
+  callingCode: [CountryConnectionCallingCode]
+  capital: [CountryConnectionCapital]
+  cca2: [CountryConnectionCca2]
+  cca3: [CountryConnectionCca3]
+  ccn3: [CountryConnectionCcn3]
+  cioc: [CountryConnectionCioc]
+  currency: [CountryConnectionCurrency]
+  demonym: [CountryConnectionDemonym]
+  landlocked: [CountryConnectionLandlocked]
+  languages: [CountryConnectionLanguages]
+  region: [CountryConnectionRegion]
+  subregion: [CountryConnectionSubregion]
+  tld: [CountryConnectionTld]
+  translations: [CountryConnectionTranslations]
+}
+
+input CountryInput {
+  name: String
+  latlng: String
+  altSpellings: String
+  area: Int
+  borders: String
+  callingCode: String
+  capital: String
+  cca2: String
+  cca3: String
+  ccn3: String
+  cioc: String
+  currency: String
+  demonym: String
+  landlocked: Boolean
+  languages: String
+  region: String
+  subregion: String
+  tld: String
+  translations: String
+}
+
+input createCityInput {
+  data: CityInput
+}
+
+type createCityPayload {
+  city: City
+}
+
+input createContactInput {
+  data: ContactInput
+}
+
+type createContactPayload {
+  contact: Contact
+}
+
+input createCountryInput {
+  data: CountryInput
+}
+
+type createCountryPayload {
+  country: Country
+}
+
+input createProductinplaceInput {
+  data: ProductinplaceInput
+}
+
+type createProductinplacePayload {
+  productinplace: Productinplace
+}
+
+input createProductInput {
+  data: ProductInput
+}
+
+type createProductPayload {
+  product: Product
+}
+
+input createRoleInput {
+  data: RoleInput
+}
+
+type createRolePayload {
+  role: UsersPermissionsRole
+}
+
+input createServiceplaceInput {
+  data: ServiceplaceInput
+}
+
+type createServiceplacePayload {
+  serviceplace: Serviceplace
+}
+
+input createTechnicianInput {
+  data: TechnicianInput
+}
+
+type createTechnicianPayload {
+  technician: Technician
+}
+
+input createUserInput {
+  data: UserInput
+}
+
+type createUserPayload {
+  user: UsersPermissionsUser
+}
+
+input createWoexpenseInput {
+  data: WoexpenseInput
+}
+
+type createWoexpensePayload {
+  woexpense: Woexpense
+}
+
+input createWolaborInput {
+  data: WolaborInput
+}
+
+type createWolaborPayload {
+  wolabor: Wolabor
+}
+
+input createWopartInput {
+  data: WopartInput
+}
+
+type createWopartPayload {
+  wopart: Wopart
+}
+
+input createWorkorderInput {
+  data: WorkorderInput
+}
+
+type createWorkorderPayload {
+  workorder: Workorder
+}
+
+"""
+The `DateTime` scalar represents a date and time following the ISO 8601 standard
+"""
+scalar DateTime
+
+input deleteCityInput {
+  where: InputID
+}
+
+type deleteCityPayload {
+  city: City
+}
+
+input deleteContactInput {
+  where: InputID
+}
+
+type deleteContactPayload {
+  contact: Contact
+}
+
+input deleteCountryInput {
+  where: InputID
+}
+
+type deleteCountryPayload {
+  country: Country
+}
+
+input deleteProductinplaceInput {
+  where: InputID
+}
+
+type deleteProductinplacePayload {
+  productinplace: Productinplace
+}
+
+input deleteProductInput {
+  where: InputID
+}
+
+type deleteProductPayload {
+  product: Product
+}
+
+input deleteRoleInput {
+  where: InputID
+}
+
+type deleteRolePayload {
+  role: UsersPermissionsRole
+}
+
+input deleteServiceplaceInput {
+  where: InputID
+}
+
+type deleteServiceplacePayload {
+  serviceplace: Serviceplace
+}
+
+input deleteTechnicianInput {
+  where: InputID
+}
+
+type deleteTechnicianPayload {
+  technician: Technician
+}
+
+input deleteUserInput {
+  where: InputID
+}
+
+type deleteUserPayload {
+  user: UsersPermissionsUser
+}
+
+input deleteWoexpenseInput {
+  where: InputID
+}
+
+type deleteWoexpensePayload {
+  woexpense: Woexpense
+}
+
+input deleteWolaborInput {
+  where: InputID
+}
+
+type deleteWolaborPayload {
+  wolabor: Wolabor
+}
+
+input deleteWopartInput {
+  where: InputID
+}
+
+type deleteWopartPayload {
+  wopart: Wopart
+}
+
+input deleteWorkorderInput {
+  where: InputID
+}
+
+type deleteWorkorderPayload {
+  workorder: Workorder
+}
+
+enum ENUM_PRODUCT_RECORDTYPEID {
+  Product
+  Expense
+  Labor
+  Part
+}
+
+enum ENUM_PRODUCT_UH__TYPE__C {
+  General
+  Installation
+  Repairment
+  Replacement
+  Lunch
+  Dinner
+  Gas
+  Tolls
+  Overnight
+  Spare_part
+  Accessories
+  Presents
+}
+
+enum ENUM_PRODUCTINPLACE_UH__STATUS__C {
+  Shipped
+  Installed
+  Returned
+  In
+  Transit
+}
+
+enum ENUM_WOEXPENSE_UH__EXPENSETYPE__C {
+  Parking
+  Toll
+  Meals
+  Lodging
+  Mileage
+}
+
+enum ENUM_WORKORDER_UH__STATUS__C {
+  Open
+  Accept
+  Travelling
+  Arrived_on_place
+  Completed
+  Closed
+  Reject
+}
+
+input FileInput {
+  name: String!
+  hash: String!
+  sha256: String
+  ext: String
+  mime: String!
+  size: String!
+  url: String!
+  provider: String!
+  related: [ID]
+}
+
+input InputID {
+  id: ID!
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+union Morph = City | createCityPayload | updateCityPayload | deleteCityPayload | CityConnection | CityAggregator | CityAggregatorSum | CityAggregatorAvg | CityAggregatorMin | CityAggregatorMax | CityGroupBy | CityConnection_id | CityConnectionCreatedAt | CityConnectionUpdatedAt | CityConnectionName | CityConnectionCountry | CityConnectionLat | CityConnectionLng | CityConnectionCountry__r | Contact | createContactPayload | updateContactPayload | deleteContactPayload | ContactConnection | ContactAggregator | ContactGroupBy | ContactConnection_id | ContactConnectionCreatedAt | ContactConnectionUpdatedAt | ContactConnectionName | ContactConnectionDescription | ContactConnectionEmail | ContactConnectionPhone | ContactConnectionOwner | ContactConnectionCreatedBy | ContactConnectionId | Country | createCountryPayload | updateCountryPayload | deleteCountryPayload | CountryConnection | CountryAggregator | CountryAggregatorSum | CountryAggregatorAvg | CountryAggregatorMin | CountryAggregatorMax | CountryGroupBy | CountryConnection_id | CountryConnectionCreatedAt | CountryConnectionUpdatedAt | CountryConnectionName | CountryConnectionLatlng | CountryConnectionAltSpellings | CountryConnectionArea | CountryConnectionBorders | CountryConnectionCallingCode | CountryConnectionCapital | CountryConnectionCca2 | CountryConnectionCca3 | CountryConnectionCcn3 | CountryConnectionCioc | CountryConnectionCurrency | CountryConnectionDemonym | CountryConnectionLandlocked | CountryConnectionLanguages | CountryConnectionRegion | CountryConnectionSubregion | CountryConnectionTld | CountryConnectionTranslations | Product | createProductPayload | updateProductPayload | deleteProductPayload | ProductConnection | ProductAggregator | ProductAggregatorSum | ProductAggregatorAvg | ProductAggregatorMin | ProductAggregatorMax | ProductGroupBy | ProductConnection_id | ProductConnectionCreatedAt | ProductConnectionUpdatedAt | ProductConnectionName | ProductConnectionDescription | ProductConnectionPrice | ProductConnectionId | ProductConnectionUH__Type__c | ProductConnectionRecordTypeId | ProductConnectionProductCode | ProductConnectionIsActive | Productinplace | createProductinplacePayload | updateProductinplacePayload | deleteProductinplacePayload | ProductinplaceConnection | ProductinplaceAggregator | ProductinplaceAggregatorSum | ProductinplaceAggregatorAvg | ProductinplaceAggregatorMin | ProductinplaceAggregatorMax | ProductinplaceGroupBy | ProductinplaceConnection_id | ProductinplaceConnectionCreatedAt | ProductinplaceConnectionUpdatedAt | ProductinplaceConnectionName | ProductinplaceConnectionInstalledDate | ProductinplaceConnectionUH__Product__r | ProductinplaceConnectionUH__code__c | ProductinplaceConnectionUH__description__c | ProductinplaceConnectionCreatedBy | ProductinplaceConnectionLastModifiedBy | ProductinplaceConnectionId | ProductinplaceConnectionUH__ServicePlace__r | ProductinplaceConnectionUH__Contact__r | ProductinplaceConnectionUH__Status__c | ProductinplaceConnectionUH__installedDate__c | ProductinplaceConnectionUH__purchaseDate__c | ProductinplaceConnectionUH__shippedDate__c | ProductinplaceConnectionUH__endDate__c | ProductinplaceConnectionUH__Quantity__c | ProductinplaceConnectionUH__serial__c | Serviceplace | createServiceplacePayload | updateServiceplacePayload | deleteServiceplacePayload | ServiceplaceConnection | ServiceplaceAggregator | ServiceplaceGroupBy | ServiceplaceConnection_id | ServiceplaceConnectionCreatedAt | ServiceplaceConnectionUpdatedAt | ServiceplaceConnectionName | ServiceplaceConnectionUH__Address__c | ServiceplaceConnectionUH__Phone__c | ServiceplaceConnectionUH__postalCode__c | ServiceplaceConnectionUH__Contact__r | ServiceplaceConnectionId | ServiceplaceConnectionUH__position__c | ServiceplaceConnectionUH__City__r | Technician | createTechnicianPayload | updateTechnicianPayload | deleteTechnicianPayload | TechnicianConnection | TechnicianAggregator | TechnicianGroupBy | TechnicianConnection_id | TechnicianConnectionCreatedAt | TechnicianConnectionUpdatedAt | TechnicianConnectionUH__Active__c | TechnicianConnectionUH__address__c | TechnicianConnectionUH__User__r | TechnicianConnectionName | TechnicianConnectionId | Woexpense | createWoexpensePayload | updateWoexpensePayload | deleteWoexpensePayload | WoexpenseConnection | WoexpenseAggregator | WoexpenseAggregatorSum | WoexpenseAggregatorAvg | WoexpenseAggregatorMin | WoexpenseAggregatorMax | WoexpenseGroupBy | WoexpenseConnection_id | WoexpenseConnectionCreatedAt | WoexpenseConnectionUpdatedAt | WoexpenseConnectionName | WoexpenseConnectionUH__expenseType__c | WoexpenseConnectionUH__Quantity__c | WoexpenseConnectionUH__Cost__c | WoexpenseConnectionUH__totalCost__c | WoexpenseConnectionUH__workOrder__r | WoexpenseConnectionId | Wolabor | createWolaborPayload | updateWolaborPayload | deleteWolaborPayload | WolaborConnection | WolaborAggregator | WolaborAggregatorSum | WolaborAggregatorAvg | WolaborAggregatorMin | WolaborAggregatorMax | WolaborGroupBy | WolaborConnection_id | WolaborConnectionCreatedAt | WolaborConnectionUpdatedAt | WolaborConnectionName | WolaborConnectionUH__Cost__c | WolaborConnectionUH__totalCost__c | WolaborConnectionUH__hoursCount__c | WolaborConnectionUH__workOrder__r | WolaborConnectionUH__Labor__r | WolaborConnectionId | Wopart | createWopartPayload | updateWopartPayload | deleteWopartPayload | WopartConnection | WopartAggregator | WopartAggregatorSum | WopartAggregatorAvg | WopartAggregatorMin | WopartAggregatorMax | WopartGroupBy | WopartConnection_id | WopartConnectionCreatedAt | WopartConnectionUpdatedAt | WopartConnectionName | WopartConnectionUH__Cost__c | WopartConnectionUH__totalCost__c | WopartConnectionUH__Quantity__c | WopartConnectionUH__Part__r | WopartConnectionUH__workOrder__r | WopartConnectionUH__Department__c | WopartConnectionId | Workorder | createWorkorderPayload | updateWorkorderPayload | deleteWorkorderPayload | WorkorderConnection | WorkorderAggregator | WorkorderAggregatorSum | WorkorderAggregatorAvg | WorkorderAggregatorMin | WorkorderAggregatorMax | WorkorderGroupBy | WorkorderConnection_id | WorkorderConnectionCreatedAt | WorkorderConnectionUpdatedAt | WorkorderConnectionName | WorkorderConnectionComments | WorkorderConnectionDateCancelled | WorkorderConnectionCancelledBy | WorkorderConnectionClosedBy | WorkorderConnectionClosedOn | WorkorderConnectionUH__Contact__r | WorkorderConnectionCreatedBy | WorkorderConnectionUH__Description__c | WorkorderConnectionUH__Deadline__c | WorkorderConnectionInvoiceAmount | WorkorderConnectionInvoiceDate | WorkorderConnectionInvoiceRef | WorkorderConnectionLastUpdatedTime | WorkorderConnectionLastModifiedBy | WorkorderConnectionOwner | WorkorderConnectionUH__productInPlace__r | WorkorderConnectionParentWo | WorkorderConnectionUH__startTime__c | WorkorderConnectionUH__ServicePlace__r | WorkorderConnectionId | WorkorderConnectionUH__Status__c | WorkorderConnectionStatusesMap | WorkorderConnectionUH__Technician__r | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionResetPasswordToken | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | UsersPermissionsUserConnectionName | UsersPermissionsUserConnectionPhone
+
+type Mutation {
+  createCity(input: createCityInput): createCityPayload
+  updateCity(input: updateCityInput): updateCityPayload
+  deleteCity(input: deleteCityInput): deleteCityPayload
+  createContact(input: createContactInput): createContactPayload
+  updateContact(input: updateContactInput): updateContactPayload
+  deleteContact(input: deleteContactInput): deleteContactPayload
+  createCountry(input: createCountryInput): createCountryPayload
+  updateCountry(input: updateCountryInput): updateCountryPayload
+  deleteCountry(input: deleteCountryInput): deleteCountryPayload
+  createProduct(input: createProductInput): createProductPayload
+  updateProduct(input: updateProductInput): updateProductPayload
+  deleteProduct(input: deleteProductInput): deleteProductPayload
+  createProductinplace(input: createProductinplaceInput): createProductinplacePayload
+  updateProductinplace(input: updateProductinplaceInput): updateProductinplacePayload
+  deleteProductinplace(input: deleteProductinplaceInput): deleteProductinplacePayload
+  createServiceplace(input: createServiceplaceInput): createServiceplacePayload
+  updateServiceplace(input: updateServiceplaceInput): updateServiceplacePayload
+  deleteServiceplace(input: deleteServiceplaceInput): deleteServiceplacePayload
+  createTechnician(input: createTechnicianInput): createTechnicianPayload
+  updateTechnician(input: updateTechnicianInput): updateTechnicianPayload
+  deleteTechnician(input: deleteTechnicianInput): deleteTechnicianPayload
+  createWoexpense(input: createWoexpenseInput): createWoexpensePayload
+  updateWoexpense(input: updateWoexpenseInput): updateWoexpensePayload
+  deleteWoexpense(input: deleteWoexpenseInput): deleteWoexpensePayload
+  createWolabor(input: createWolaborInput): createWolaborPayload
+  updateWolabor(input: updateWolaborInput): updateWolaborPayload
+  deleteWolabor(input: deleteWolaborInput): deleteWolaborPayload
+  createWopart(input: createWopartInput): createWopartPayload
+  updateWopart(input: updateWopartInput): updateWopartPayload
+  deleteWopart(input: deleteWopartInput): deleteWopartPayload
+  createWorkorder(input: createWorkorderInput): createWorkorderPayload
+  updateWorkorder(input: updateWorkorderInput): updateWorkorderPayload
+  deleteWorkorder(input: deleteWorkorderInput): deleteWorkorderPayload
+
+  """Create a new role"""
+  createRole(input: createRoleInput): createRolePayload
+
+  """Update an existing role"""
+  updateRole(input: updateRoleInput): updateRolePayload
+
+  """Delete an existing role"""
+  deleteRole(input: deleteRoleInput): deleteRolePayload
+  createUser(input: createUserInput): createUserPayload
+  updateUser(input: updateUserInput): updateUserPayload
+  deleteUser(input: deleteUserInput): deleteUserPayload
+  upload(refId: ID, ref: String, source: String, file: Upload!): UploadFile!
+}
+
+type Product {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  Name: String!
+  description: String
+  price: Float
+  Id: String
+  UH__Type__c: ENUM_PRODUCT_UH__TYPE__C!
+  RecordTypeId: ENUM_PRODUCT_RECORDTYPEID!
+  ProductCode: String
+  IsActive: Boolean!
+}
+
+type ProductAggregator {
+  count: Int
+  sum: ProductAggregatorSum
+  avg: ProductAggregatorAvg
+  min: ProductAggregatorMin
+  max: ProductAggregatorMax
+}
+
+type ProductAggregatorAvg {
+  price: Float
+}
+
+type ProductAggregatorMax {
+  price: Float
+}
+
+type ProductAggregatorMin {
+  price: Float
+}
+
+type ProductAggregatorSum {
+  price: Float
+}
+
+type ProductConnection {
+  values: [Product]
+  groupBy: ProductGroupBy
+  aggregate: ProductAggregator
+}
+
+type ProductConnection_id {
+  key: ID
+  connection: ProductConnection
+}
+
+type ProductConnectionCreatedAt {
+  key: DateTime
+  connection: ProductConnection
+}
+
+type ProductConnectionDescription {
+  key: String
+  connection: ProductConnection
+}
+
+type ProductConnectionId {
+  key: String
+  connection: ProductConnection
+}
+
+type ProductConnectionIsActive {
+  key: Boolean
+  connection: ProductConnection
+}
+
+type ProductConnectionName {
+  key: String
+  connection: ProductConnection
+}
+
+type ProductConnectionPrice {
+  key: Float
+  connection: ProductConnection
+}
+
+type ProductConnectionProductCode {
+  key: String
+  connection: ProductConnection
+}
+
+type ProductConnectionRecordTypeId {
+  key: String
+  connection: ProductConnection
+}
+
+type ProductConnectionUH__Type__c {
+  key: String
+  connection: ProductConnection
+}
+
+type ProductConnectionUpdatedAt {
+  key: DateTime
+  connection: ProductConnection
+}
+
+type ProductGroupBy {
+  _id: [ProductConnection_id]
+  createdAt: [ProductConnectionCreatedAt]
+  updatedAt: [ProductConnectionUpdatedAt]
+  Name: [ProductConnectionName]
+  description: [ProductConnectionDescription]
+  price: [ProductConnectionPrice]
+  Id: [ProductConnectionId]
+  UH__Type__c: [ProductConnectionUH__Type__c]
+  RecordTypeId: [ProductConnectionRecordTypeId]
+  ProductCode: [ProductConnectionProductCode]
+  IsActive: [ProductConnectionIsActive]
+}
+
+type Productinplace {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  Name: String
+  installedDate: DateTime
+  UH__Product__r: Product
+  UH__code__c: String
+  UH__description__c: String
+  createdBy: UsersPermissionsUser
+  lastModifiedBy: UsersPermissionsUser
+  Id: String
+  UH__ServicePlace__r: Serviceplace
+  UH__Contact__r: Contact
+  UH__Status__c: ENUM_PRODUCTINPLACE_UH__STATUS__C
+  UH__installedDate__c: DateTime
+  UH__purchaseDate__c: DateTime
+  UH__shippedDate__c: DateTime
+  UH__endDate__c: DateTime
+  UH__Quantity__c: Float
+  UH__serial__c: String
+  workorders(sort: String, limit: Int, start: Int, where: JSON): [Workorder]
+}
+
+type ProductinplaceAggregator {
+  count: Int
+  sum: ProductinplaceAggregatorSum
+  avg: ProductinplaceAggregatorAvg
+  min: ProductinplaceAggregatorMin
+  max: ProductinplaceAggregatorMax
+}
+
+type ProductinplaceAggregatorAvg {
+  UH__Quantity__c: Float
+}
+
+type ProductinplaceAggregatorMax {
+  UH__Quantity__c: Float
+}
+
+type ProductinplaceAggregatorMin {
+  UH__Quantity__c: Float
+}
+
+type ProductinplaceAggregatorSum {
+  UH__Quantity__c: Float
+}
+
+type ProductinplaceConnection {
+  values: [Productinplace]
+  groupBy: ProductinplaceGroupBy
+  aggregate: ProductinplaceAggregator
+}
+
+type ProductinplaceConnection_id {
+  key: ID
+  connection: ProductinplaceConnection
+}
+
+type ProductinplaceConnectionCreatedAt {
+  key: DateTime
+  connection: ProductinplaceConnection
+}
+
+type ProductinplaceConnectionCreatedBy {
+  key: ID
+  connection: ProductinplaceConnection
+}
+
+type ProductinplaceConnectionId {
+  key: String
+  connection: ProductinplaceConnection
+}
+
+type ProductinplaceConnectionInstalledDate {
+  key: DateTime
+  connection: ProductinplaceConnection
+}
+
+type ProductinplaceConnectionLastModifiedBy {
+  key: ID
+  connection: ProductinplaceConnection
+}
+
+type ProductinplaceConnectionName {
+  key: String
+  connection: ProductinplaceConnection
+}
+
+type ProductinplaceConnectionUH__code__c {
+  key: String
+  connection: ProductinplaceConnection
+}
+
+type ProductinplaceConnectionUH__Contact__r {
+  key: ID
+  connection: ProductinplaceConnection
+}
+
+type ProductinplaceConnectionUH__description__c {
+  key: String
+  connection: ProductinplaceConnection
+}
+
+type ProductinplaceConnectionUH__endDate__c {
+  key: DateTime
+  connection: ProductinplaceConnection
+}
+
+type ProductinplaceConnectionUH__installedDate__c {
+  key: DateTime
+  connection: ProductinplaceConnection
+}
+
+type ProductinplaceConnectionUH__Product__r {
+  key: ID
+  connection: ProductinplaceConnection
+}
+
+type ProductinplaceConnectionUH__purchaseDate__c {
+  key: DateTime
+  connection: ProductinplaceConnection
+}
+
+type ProductinplaceConnectionUH__Quantity__c {
+  key: Float
+  connection: ProductinplaceConnection
+}
+
+type ProductinplaceConnectionUH__serial__c {
+  key: String
+  connection: ProductinplaceConnection
+}
+
+type ProductinplaceConnectionUH__ServicePlace__r {
+  key: ID
+  connection: ProductinplaceConnection
+}
+
+type ProductinplaceConnectionUH__shippedDate__c {
+  key: DateTime
+  connection: ProductinplaceConnection
+}
+
+type ProductinplaceConnectionUH__Status__c {
+  key: String
+  connection: ProductinplaceConnection
+}
+
+type ProductinplaceConnectionUpdatedAt {
+  key: DateTime
+  connection: ProductinplaceConnection
+}
+
+type ProductinplaceGroupBy {
+  _id: [ProductinplaceConnection_id]
+  createdAt: [ProductinplaceConnectionCreatedAt]
+  updatedAt: [ProductinplaceConnectionUpdatedAt]
+  Name: [ProductinplaceConnectionName]
+  installedDate: [ProductinplaceConnectionInstalledDate]
+  UH__Product__r: [ProductinplaceConnectionUH__Product__r]
+  UH__code__c: [ProductinplaceConnectionUH__code__c]
+  UH__description__c: [ProductinplaceConnectionUH__description__c]
+  createdBy: [ProductinplaceConnectionCreatedBy]
+  lastModifiedBy: [ProductinplaceConnectionLastModifiedBy]
+  Id: [ProductinplaceConnectionId]
+  UH__ServicePlace__r: [ProductinplaceConnectionUH__ServicePlace__r]
+  UH__Contact__r: [ProductinplaceConnectionUH__Contact__r]
+  UH__Status__c: [ProductinplaceConnectionUH__Status__c]
+  UH__installedDate__c: [ProductinplaceConnectionUH__installedDate__c]
+  UH__purchaseDate__c: [ProductinplaceConnectionUH__purchaseDate__c]
+  UH__shippedDate__c: [ProductinplaceConnectionUH__shippedDate__c]
+  UH__endDate__c: [ProductinplaceConnectionUH__endDate__c]
+  UH__Quantity__c: [ProductinplaceConnectionUH__Quantity__c]
+  UH__serial__c: [ProductinplaceConnectionUH__serial__c]
+}
+
+input ProductinplaceInput {
+  Name: String
+  installedDate: DateTime
+  UH__Product__r: ID
+  UH__code__c: String
+  UH__description__c: String
+  createdBy: ID
+  lastModifiedBy: ID
+  workorders: [ID]
+  Id: String
+  UH__ServicePlace__r: ID
+  UH__Contact__r: ID
+  UH__Status__c: ENUM_PRODUCTINPLACE_UH__STATUS__C
+  UH__installedDate__c: DateTime
+  UH__purchaseDate__c: DateTime
+  UH__shippedDate__c: DateTime
+  UH__endDate__c: DateTime
+  UH__Quantity__c: Float
+  UH__serial__c: String
+}
+
+input ProductInput {
+  Name: String!
+  description: String
+  price: Float
+  Id: String
+  UH__Type__c: ENUM_PRODUCT_UH__TYPE__C!
+  RecordTypeId: ENUM_PRODUCT_RECORDTYPEID!
+  ProductCode: String
+  IsActive: Boolean!
+}
+
+type Query {
+  city(id: ID!): City
+  cities(sort: String, limit: Int, start: Int, where: JSON): [City]
+  citiesConnection(sort: String, limit: Int, start: Int, where: JSON): CityConnection
+  contact(id: ID!): Contact
+  contacts(sort: String, limit: Int, start: Int, where: JSON): [Contact]
+  contactsConnection(sort: String, limit: Int, start: Int, where: JSON): ContactConnection
+  country(id: ID!): Country
+  countries(sort: String, limit: Int, start: Int, where: JSON): [Country]
+  countriesConnection(sort: String, limit: Int, start: Int, where: JSON): CountryConnection
+  product(id: ID!): Product
+  products(sort: String, limit: Int, start: Int, where: JSON): [Product]
+  productsConnection(sort: String, limit: Int, start: Int, where: JSON): ProductConnection
+  productinplace(id: ID!): Productinplace
+  productinplaces(sort: String, limit: Int, start: Int, where: JSON): [Productinplace]
+  productinplacesConnection(sort: String, limit: Int, start: Int, where: JSON): ProductinplaceConnection
+  serviceplace(id: ID!): Serviceplace
+  serviceplaces(sort: String, limit: Int, start: Int, where: JSON): [Serviceplace]
+  serviceplacesConnection(sort: String, limit: Int, start: Int, where: JSON): ServiceplaceConnection
+  technician(id: ID!): Technician
+  technicians(sort: String, limit: Int, start: Int, where: JSON): [Technician]
+  techniciansConnection(sort: String, limit: Int, start: Int, where: JSON): TechnicianConnection
+  woexpense(id: ID!): Woexpense
+  woexpenses(sort: String, limit: Int, start: Int, where: JSON): [Woexpense]
+  woexpensesConnection(sort: String, limit: Int, start: Int, where: JSON): WoexpenseConnection
+  wolabor(id: ID!): Wolabor
+  wolabors(sort: String, limit: Int, start: Int, where: JSON): [Wolabor]
+  wolaborsConnection(sort: String, limit: Int, start: Int, where: JSON): WolaborConnection
+  wopart(id: ID!): Wopart
+  woparts(sort: String, limit: Int, start: Int, where: JSON): [Wopart]
+  wopartsConnection(sort: String, limit: Int, start: Int, where: JSON): WopartConnection
+  workorder(id: ID!): Workorder
+  workorders(sort: String, limit: Int, start: Int, where: JSON): [Workorder]
+  workordersConnection(sort: String, limit: Int, start: Int, where: JSON): WorkorderConnection
+  files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
+  filesConnection(sort: String, limit: Int, start: Int, where: JSON): UploadFileConnection
+  role(id: ID!): UsersPermissionsRole
+
+  """
+  Retrieve all the existing roles. You can't apply filters on this query.
+  """
+  roles(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsRole]
+  rolesConnection(sort: String, limit: Int, start: Int, where: JSON): UsersPermissionsRoleConnection
+  user(id: ID!): UsersPermissionsUser
+  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+  usersConnection(sort: String, limit: Int, start: Int, where: JSON): UsersPermissionsUserConnection
+}
+
+input RoleInput {
+  name: String!
+  description: String
+  type: String
+  permissions: [ID]
+  users: [ID]
+}
+
+type Serviceplace {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  Name: String!
+  UH__Address__c: String!
+  UH__Phone__c: String
+  UH__postalCode__c: String
+  UH__Contact__r: Contact
+  Id: String
+  UH__position__c: String
+  UH__City__r: City
+  workorders(sort: String, limit: Int, start: Int, where: JSON): [Workorder]
+  UH__productInPlace__r(sort: String, limit: Int, start: Int, where: JSON): [Productinplace]
+}
+
+type ServiceplaceAggregator {
+  count: Int
+}
+
+type ServiceplaceConnection {
+  values: [Serviceplace]
+  groupBy: ServiceplaceGroupBy
+  aggregate: ServiceplaceAggregator
+}
+
+type ServiceplaceConnection_id {
+  key: ID
+  connection: ServiceplaceConnection
+}
+
+type ServiceplaceConnectionCreatedAt {
+  key: DateTime
+  connection: ServiceplaceConnection
+}
+
+type ServiceplaceConnectionId {
+  key: String
+  connection: ServiceplaceConnection
+}
+
+type ServiceplaceConnectionName {
+  key: String
+  connection: ServiceplaceConnection
+}
+
+type ServiceplaceConnectionUH__Address__c {
+  key: String
+  connection: ServiceplaceConnection
+}
+
+type ServiceplaceConnectionUH__City__r {
+  key: ID
+  connection: ServiceplaceConnection
+}
+
+type ServiceplaceConnectionUH__Contact__r {
+  key: ID
+  connection: ServiceplaceConnection
+}
+
+type ServiceplaceConnectionUH__Phone__c {
+  key: String
+  connection: ServiceplaceConnection
+}
+
+type ServiceplaceConnectionUH__position__c {
+  key: String
+  connection: ServiceplaceConnection
+}
+
+type ServiceplaceConnectionUH__postalCode__c {
+  key: String
+  connection: ServiceplaceConnection
+}
+
+type ServiceplaceConnectionUpdatedAt {
+  key: DateTime
+  connection: ServiceplaceConnection
+}
+
+type ServiceplaceGroupBy {
+  _id: [ServiceplaceConnection_id]
+  createdAt: [ServiceplaceConnectionCreatedAt]
+  updatedAt: [ServiceplaceConnectionUpdatedAt]
+  Name: [ServiceplaceConnectionName]
+  UH__Address__c: [ServiceplaceConnectionUH__Address__c]
+  UH__Phone__c: [ServiceplaceConnectionUH__Phone__c]
+  UH__postalCode__c: [ServiceplaceConnectionUH__postalCode__c]
+  UH__Contact__r: [ServiceplaceConnectionUH__Contact__r]
+  Id: [ServiceplaceConnectionId]
+  UH__position__c: [ServiceplaceConnectionUH__position__c]
+  UH__City__r: [ServiceplaceConnectionUH__City__r]
+}
+
+input ServiceplaceInput {
+  Name: String!
+  UH__Address__c: String!
+  UH__Phone__c: String
+  UH__postalCode__c: String
+  UH__Contact__r: ID
+  workorders: [ID]
+  Id: String
+  UH__productInPlace__r: [ID]
+  UH__position__c: String
+  UH__City__r: ID
+}
+
+type Technician {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  UH__Active__c: Boolean
+  UH__address__c: String
+  UH__User__r: UsersPermissionsUser
+  Name: String!
+  Id: String
+}
+
+type TechnicianAggregator {
+  count: Int
+}
+
+type TechnicianConnection {
+  values: [Technician]
+  groupBy: TechnicianGroupBy
+  aggregate: TechnicianAggregator
+}
+
+type TechnicianConnection_id {
+  key: ID
+  connection: TechnicianConnection
+}
+
+type TechnicianConnectionCreatedAt {
+  key: DateTime
+  connection: TechnicianConnection
+}
+
+type TechnicianConnectionId {
+  key: String
+  connection: TechnicianConnection
+}
+
+type TechnicianConnectionName {
+  key: String
+  connection: TechnicianConnection
+}
+
+type TechnicianConnectionUH__Active__c {
+  key: Boolean
+  connection: TechnicianConnection
+}
+
+type TechnicianConnectionUH__address__c {
+  key: String
+  connection: TechnicianConnection
+}
+
+type TechnicianConnectionUH__User__r {
+  key: ID
+  connection: TechnicianConnection
+}
+
+type TechnicianConnectionUpdatedAt {
+  key: DateTime
+  connection: TechnicianConnection
+}
+
+type TechnicianGroupBy {
+  _id: [TechnicianConnection_id]
+  createdAt: [TechnicianConnectionCreatedAt]
+  updatedAt: [TechnicianConnectionUpdatedAt]
+  UH__Active__c: [TechnicianConnectionUH__Active__c]
+  UH__address__c: [TechnicianConnectionUH__address__c]
+  UH__User__r: [TechnicianConnectionUH__User__r]
+  Name: [TechnicianConnectionName]
+  Id: [TechnicianConnectionId]
+}
+
+input TechnicianInput {
+  UH__Active__c: Boolean
+  UH__address__c: String
+  UH__User__r: ID
+  Name: String!
+  Id: String
+}
+
+input updateCityInput {
+  where: InputID
+  data: CityInput
+}
+
+type updateCityPayload {
+  city: City
+}
+
+input updateContactInput {
+  where: InputID
+  data: ContactInput
+}
+
+type updateContactPayload {
+  contact: Contact
+}
+
+input updateCountryInput {
+  where: InputID
+  data: CountryInput
+}
+
+type updateCountryPayload {
+  country: Country
+}
+
+input updateProductinplaceInput {
+  where: InputID
+  data: ProductinplaceInput
+}
+
+type updateProductinplacePayload {
+  productinplace: Productinplace
+}
+
+input updateProductInput {
+  where: InputID
+  data: ProductInput
+}
+
+type updateProductPayload {
+  product: Product
+}
+
+input updateRoleInput {
+  where: InputID
+  data: RoleInput
+}
+
+type updateRolePayload {
+  role: UsersPermissionsRole
+}
+
+input updateServiceplaceInput {
+  where: InputID
+  data: ServiceplaceInput
+}
+
+type updateServiceplacePayload {
+  serviceplace: Serviceplace
+}
+
+input updateTechnicianInput {
+  where: InputID
+  data: TechnicianInput
+}
+
+type updateTechnicianPayload {
+  technician: Technician
+}
+
+input updateUserInput {
+  where: InputID
+  data: UserInput
+}
+
+type updateUserPayload {
+  user: UsersPermissionsUser
+}
+
+input updateWoexpenseInput {
+  where: InputID
+  data: WoexpenseInput
+}
+
+type updateWoexpensePayload {
+  woexpense: Woexpense
+}
+
+input updateWolaborInput {
+  where: InputID
+  data: WolaborInput
+}
+
+type updateWolaborPayload {
+  wolabor: Wolabor
+}
+
+input updateWopartInput {
+  where: InputID
+  data: WopartInput
+}
+
+type updateWopartPayload {
+  wopart: Wopart
+}
+
+input updateWorkorderInput {
+  where: InputID
+  data: WorkorderInput
+}
+
+type updateWorkorderPayload {
+  workorder: Workorder
+}
+
+"""
+The `Upload` scalar type represents a file upload promise that resolves an
+object containing `stream`, `filename`, `mimetype` and `encoding`.
+"""
+scalar Upload
+
+type UploadFile {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  name: String!
+  hash: String!
+  sha256: String
+  ext: String
+  mime: String!
+  size: String!
+  url: String!
+  provider: String!
+  related(sort: String, limit: Int, start: Int, where: JSON): [Morph]
+}
+
+type UploadFileAggregator {
+  count: Int
+}
+
+type UploadFileConnection {
+  values: [UploadFile]
+  groupBy: UploadFileGroupBy
+  aggregate: UploadFileAggregator
+}
+
+type UploadFileConnection_id {
+  key: ID
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionCreatedAt {
+  key: DateTime
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionExt {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionHash {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionMime {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionName {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionProvider {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionSha256 {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionSize {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionUpdatedAt {
+  key: DateTime
+  connection: UploadFileConnection
+}
+
+type UploadFileConnectionUrl {
+  key: String
+  connection: UploadFileConnection
+}
+
+type UploadFileGroupBy {
+  _id: [UploadFileConnection_id]
+  createdAt: [UploadFileConnectionCreatedAt]
+  updatedAt: [UploadFileConnectionUpdatedAt]
+  name: [UploadFileConnectionName]
+  hash: [UploadFileConnectionHash]
+  sha256: [UploadFileConnectionSha256]
+  ext: [UploadFileConnectionExt]
+  mime: [UploadFileConnectionMime]
+  size: [UploadFileConnectionSize]
+  url: [UploadFileConnectionUrl]
+  provider: [UploadFileConnectionProvider]
+}
+
+input UserInput {
+  username: String!
+  email: String!
+  resetPasswordToken: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: ID
+  Name: String!
+  Phone: String
+}
+
+type UsersPermissionsPermission {
+  _id: ID!
+  type: String!
+  controller: String!
+  action: String!
+  enabled: Boolean!
+  policy: String
+  role: UsersPermissionsRole
+}
+
+type UsersPermissionsRole {
+  _id: ID!
+  name: String!
+  description: String
+  type: String
+  permissions(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsPermission]
+  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+}
+
+type UsersPermissionsRoleAggregator {
+  count: Int
+}
+
+type UsersPermissionsRoleConnection {
+  values: [UsersPermissionsRole]
+  groupBy: UsersPermissionsRoleGroupBy
+  aggregate: UsersPermissionsRoleAggregator
+}
+
+type UsersPermissionsRoleConnection_id {
+  key: ID
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionDescription {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionName {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleConnectionType {
+  key: String
+  connection: UsersPermissionsRoleConnection
+}
+
+type UsersPermissionsRoleGroupBy {
+  _id: [UsersPermissionsRoleConnection_id]
+  name: [UsersPermissionsRoleConnectionName]
+  description: [UsersPermissionsRoleConnectionDescription]
+  type: [UsersPermissionsRoleConnectionType]
+}
+
+type UsersPermissionsUser {
+  _id: ID!
+  username: String!
+  email: String!
+  resetPasswordToken: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: UsersPermissionsRole
+  Name: String!
+  Phone: String
+}
+
+type UsersPermissionsUserAggregator {
+  count: Int
+}
+
+type UsersPermissionsUserConnection {
+  values: [UsersPermissionsUser]
+  groupBy: UsersPermissionsUserGroupBy
+  aggregate: UsersPermissionsUserAggregator
+}
+
+type UsersPermissionsUserConnection_id {
+  key: ID
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionBlocked {
+  key: Boolean
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionConfirmed {
+  key: Boolean
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionEmail {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionName {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionPhone {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionResetPasswordToken {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionRole {
+  key: ID
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserConnectionUsername {
+  key: String
+  connection: UsersPermissionsUserConnection
+}
+
+type UsersPermissionsUserGroupBy {
+  _id: [UsersPermissionsUserConnection_id]
+  username: [UsersPermissionsUserConnectionUsername]
+  email: [UsersPermissionsUserConnectionEmail]
+  resetPasswordToken: [UsersPermissionsUserConnectionResetPasswordToken]
+  confirmed: [UsersPermissionsUserConnectionConfirmed]
+  blocked: [UsersPermissionsUserConnectionBlocked]
+  role: [UsersPermissionsUserConnectionRole]
+  Name: [UsersPermissionsUserConnectionName]
+  Phone: [UsersPermissionsUserConnectionPhone]
+}
+
+"""WO Expense"""
+type Woexpense {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  Name: String
+  UH__expenseType__c: ENUM_WOEXPENSE_UH__EXPENSETYPE__C
+  UH__Quantity__c: Int!
+  UH__Cost__c: Float
+  UH__totalCost__c: Float
+  UH__workOrder__r: Workorder
+  Id: String
+}
+
+type WoexpenseAggregator {
+  count: Int
+  sum: WoexpenseAggregatorSum
+  avg: WoexpenseAggregatorAvg
+  min: WoexpenseAggregatorMin
+  max: WoexpenseAggregatorMax
+}
+
+type WoexpenseAggregatorAvg {
+  UH__Cost__c: Float
+  UH__totalCost__c: Float
+}
+
+type WoexpenseAggregatorMax {
+  UH__Cost__c: Float
+  UH__totalCost__c: Float
+}
+
+type WoexpenseAggregatorMin {
+  UH__Cost__c: Float
+  UH__totalCost__c: Float
+}
+
+type WoexpenseAggregatorSum {
+  UH__Cost__c: Float
+  UH__totalCost__c: Float
+}
+
+type WoexpenseConnection {
+  values: [Woexpense]
+  groupBy: WoexpenseGroupBy
+  aggregate: WoexpenseAggregator
+}
+
+type WoexpenseConnection_id {
+  key: ID
+  connection: WoexpenseConnection
+}
+
+type WoexpenseConnectionCreatedAt {
+  key: DateTime
+  connection: WoexpenseConnection
+}
+
+type WoexpenseConnectionId {
+  key: String
+  connection: WoexpenseConnection
+}
+
+type WoexpenseConnectionName {
+  key: String
+  connection: WoexpenseConnection
+}
+
+type WoexpenseConnectionUH__Cost__c {
+  key: Float
+  connection: WoexpenseConnection
+}
+
+type WoexpenseConnectionUH__expenseType__c {
+  key: String
+  connection: WoexpenseConnection
+}
+
+type WoexpenseConnectionUH__Quantity__c {
+  key: Int
+  connection: WoexpenseConnection
+}
+
+type WoexpenseConnectionUH__totalCost__c {
+  key: Float
+  connection: WoexpenseConnection
+}
+
+type WoexpenseConnectionUH__workOrder__r {
+  key: ID
+  connection: WoexpenseConnection
+}
+
+type WoexpenseConnectionUpdatedAt {
+  key: DateTime
+  connection: WoexpenseConnection
+}
+
+type WoexpenseGroupBy {
+  _id: [WoexpenseConnection_id]
+  createdAt: [WoexpenseConnectionCreatedAt]
+  updatedAt: [WoexpenseConnectionUpdatedAt]
+  Name: [WoexpenseConnectionName]
+  UH__expenseType__c: [WoexpenseConnectionUH__expenseType__c]
+  UH__Quantity__c: [WoexpenseConnectionUH__Quantity__c]
+  UH__Cost__c: [WoexpenseConnectionUH__Cost__c]
+  UH__totalCost__c: [WoexpenseConnectionUH__totalCost__c]
+  UH__workOrder__r: [WoexpenseConnectionUH__workOrder__r]
+  Id: [WoexpenseConnectionId]
+}
+
+input WoexpenseInput {
+  Name: String
+  UH__expenseType__c: ENUM_WOEXPENSE_UH__EXPENSETYPE__C
+  UH__Quantity__c: Int!
+  UH__Cost__c: Float
+  UH__totalCost__c: Float
+  UH__workOrder__r: ID
+  Id: String
+}
+
+"""WO Labor"""
+type Wolabor {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  Name: String
+  UH__Cost__c: Float!
+  UH__totalCost__c: Float
+  UH__hoursCount__c: Float!
+  UH__workOrder__r: Workorder
+  UH__Labor__r: Product
+  Id: String
+}
+
+type WolaborAggregator {
+  count: Int
+  sum: WolaborAggregatorSum
+  avg: WolaborAggregatorAvg
+  min: WolaborAggregatorMin
+  max: WolaborAggregatorMax
+}
+
+type WolaborAggregatorAvg {
+  UH__totalCost__c: Float
+}
+
+type WolaborAggregatorMax {
+  UH__totalCost__c: Float
+}
+
+type WolaborAggregatorMin {
+  UH__totalCost__c: Float
+}
+
+type WolaborAggregatorSum {
+  UH__totalCost__c: Float
+}
+
+type WolaborConnection {
+  values: [Wolabor]
+  groupBy: WolaborGroupBy
+  aggregate: WolaborAggregator
+}
+
+type WolaborConnection_id {
+  key: ID
+  connection: WolaborConnection
+}
+
+type WolaborConnectionCreatedAt {
+  key: DateTime
+  connection: WolaborConnection
+}
+
+type WolaborConnectionId {
+  key: String
+  connection: WolaborConnection
+}
+
+type WolaborConnectionName {
+  key: String
+  connection: WolaborConnection
+}
+
+type WolaborConnectionUH__Cost__c {
+  key: Float
+  connection: WolaborConnection
+}
+
+type WolaborConnectionUH__hoursCount__c {
+  key: Float
+  connection: WolaborConnection
+}
+
+type WolaborConnectionUH__Labor__r {
+  key: ID
+  connection: WolaborConnection
+}
+
+type WolaborConnectionUH__totalCost__c {
+  key: Float
+  connection: WolaborConnection
+}
+
+type WolaborConnectionUH__workOrder__r {
+  key: ID
+  connection: WolaborConnection
+}
+
+type WolaborConnectionUpdatedAt {
+  key: DateTime
+  connection: WolaborConnection
+}
+
+type WolaborGroupBy {
+  _id: [WolaborConnection_id]
+  createdAt: [WolaborConnectionCreatedAt]
+  updatedAt: [WolaborConnectionUpdatedAt]
+  Name: [WolaborConnectionName]
+  UH__Cost__c: [WolaborConnectionUH__Cost__c]
+  UH__totalCost__c: [WolaborConnectionUH__totalCost__c]
+  UH__hoursCount__c: [WolaborConnectionUH__hoursCount__c]
+  UH__workOrder__r: [WolaborConnectionUH__workOrder__r]
+  UH__Labor__r: [WolaborConnectionUH__Labor__r]
+  Id: [WolaborConnectionId]
+}
+
+input WolaborInput {
+  Name: String
+  UH__Cost__c: Float!
+  UH__totalCost__c: Float
+  UH__hoursCount__c: Float!
+  UH__workOrder__r: ID
+  UH__Labor__r: ID
+  Id: String
+}
+
+"""WO Part"""
+type Wopart {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  Name: String
+  UH__Cost__c: Float
+  UH__totalCost__c: Float
+  UH__Quantity__c: Float
+  UH__Part__r: Product
+  UH__workOrder__r: Workorder
+  UH__Department__c: String
+  Id: String
+}
+
+type WopartAggregator {
+  count: Int
+  sum: WopartAggregatorSum
+  avg: WopartAggregatorAvg
+  min: WopartAggregatorMin
+  max: WopartAggregatorMax
+}
+
+type WopartAggregatorAvg {
+  UH__Cost__c: Float
+  UH__totalCost__c: Float
+  UH__Quantity__c: Float
+}
+
+type WopartAggregatorMax {
+  UH__Cost__c: Float
+  UH__totalCost__c: Float
+  UH__Quantity__c: Float
+}
+
+type WopartAggregatorMin {
+  UH__Cost__c: Float
+  UH__totalCost__c: Float
+  UH__Quantity__c: Float
+}
+
+type WopartAggregatorSum {
+  UH__Cost__c: Float
+  UH__totalCost__c: Float
+  UH__Quantity__c: Float
+}
+
+type WopartConnection {
+  values: [Wopart]
+  groupBy: WopartGroupBy
+  aggregate: WopartAggregator
+}
+
+type WopartConnection_id {
+  key: ID
+  connection: WopartConnection
+}
+
+type WopartConnectionCreatedAt {
+  key: DateTime
+  connection: WopartConnection
+}
+
+type WopartConnectionId {
+  key: String
+  connection: WopartConnection
+}
+
+type WopartConnectionName {
+  key: String
+  connection: WopartConnection
+}
+
+type WopartConnectionUH__Cost__c {
+  key: Float
+  connection: WopartConnection
+}
+
+type WopartConnectionUH__Department__c {
+  key: String
+  connection: WopartConnection
+}
+
+type WopartConnectionUH__Part__r {
+  key: ID
+  connection: WopartConnection
+}
+
+type WopartConnectionUH__Quantity__c {
+  key: Float
+  connection: WopartConnection
+}
+
+type WopartConnectionUH__totalCost__c {
+  key: Float
+  connection: WopartConnection
+}
+
+type WopartConnectionUH__workOrder__r {
+  key: ID
+  connection: WopartConnection
+}
+
+type WopartConnectionUpdatedAt {
+  key: DateTime
+  connection: WopartConnection
+}
+
+type WopartGroupBy {
+  _id: [WopartConnection_id]
+  createdAt: [WopartConnectionCreatedAt]
+  updatedAt: [WopartConnectionUpdatedAt]
+  Name: [WopartConnectionName]
+  UH__Cost__c: [WopartConnectionUH__Cost__c]
+  UH__totalCost__c: [WopartConnectionUH__totalCost__c]
+  UH__Quantity__c: [WopartConnectionUH__Quantity__c]
+  UH__Part__r: [WopartConnectionUH__Part__r]
+  UH__workOrder__r: [WopartConnectionUH__workOrder__r]
+  UH__Department__c: [WopartConnectionUH__Department__c]
+  Id: [WopartConnectionId]
+}
+
+input WopartInput {
+  Name: String
+  UH__Cost__c: Float
+  UH__totalCost__c: Float
+  UH__Quantity__c: Float
+  UH__Part__r: ID
+  UH__workOrder__r: ID
+  UH__Department__c: String
+  Id: String
+}
+
+type Workorder {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  Name: String!
+  Comments: String
+  dateCancelled: DateTime
+  cancelledBy: UsersPermissionsUser
+  closedBy: UsersPermissionsUser
+  closedOn: DateTime
+  UH__Contact__r: Contact
+  createdBy: UsersPermissionsUser
+  UH__Description__c: String!
+  UH__Deadline__c: DateTime
+  invoiceAmount: Float
+  invoiceDate: DateTime
+  InvoiceRef: String
+  lastUpdatedTime: DateTime
+  lastModifiedBy: UsersPermissionsUser
+  owner: UsersPermissionsUser
+  UH__productInPlace__r: Productinplace
+  parentWo: Workorder
+  UH__startTime__c: DateTime
+  UH__ServicePlace__r: Serviceplace
+  Id: String
+  UH__Status__c: ENUM_WORKORDER_UH__STATUS__C!
+  statusesMap: String
+  UH__Technician__r: Technician
+}
+
+type WorkorderAggregator {
+  count: Int
+  sum: WorkorderAggregatorSum
+  avg: WorkorderAggregatorAvg
+  min: WorkorderAggregatorMin
+  max: WorkorderAggregatorMax
+}
+
+type WorkorderAggregatorAvg {
+  invoiceAmount: Float
+}
+
+type WorkorderAggregatorMax {
+  invoiceAmount: Float
+}
+
+type WorkorderAggregatorMin {
+  invoiceAmount: Float
+}
+
+type WorkorderAggregatorSum {
+  invoiceAmount: Float
+}
+
+type WorkorderConnection {
+  values: [Workorder]
+  groupBy: WorkorderGroupBy
+  aggregate: WorkorderAggregator
+}
+
+type WorkorderConnection_id {
+  key: ID
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionCancelledBy {
+  key: ID
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionClosedBy {
+  key: ID
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionClosedOn {
+  key: DateTime
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionComments {
+  key: String
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionCreatedAt {
+  key: DateTime
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionCreatedBy {
+  key: ID
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionDateCancelled {
+  key: DateTime
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionId {
+  key: String
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionInvoiceAmount {
+  key: Float
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionInvoiceDate {
+  key: DateTime
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionInvoiceRef {
+  key: String
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionLastModifiedBy {
+  key: ID
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionLastUpdatedTime {
+  key: DateTime
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionName {
+  key: String
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionOwner {
+  key: ID
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionParentWo {
+  key: ID
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionStatusesMap {
+  key: String
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionUH__Contact__r {
+  key: ID
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionUH__Deadline__c {
+  key: DateTime
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionUH__Description__c {
+  key: String
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionUH__productInPlace__r {
+  key: ID
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionUH__ServicePlace__r {
+  key: ID
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionUH__startTime__c {
+  key: DateTime
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionUH__Status__c {
+  key: String
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionUH__Technician__r {
+  key: ID
+  connection: WorkorderConnection
+}
+
+type WorkorderConnectionUpdatedAt {
+  key: DateTime
+  connection: WorkorderConnection
+}
+
+type WorkorderGroupBy {
+  _id: [WorkorderConnection_id]
+  createdAt: [WorkorderConnectionCreatedAt]
+  updatedAt: [WorkorderConnectionUpdatedAt]
+  Name: [WorkorderConnectionName]
+  Comments: [WorkorderConnectionComments]
+  dateCancelled: [WorkorderConnectionDateCancelled]
+  cancelledBy: [WorkorderConnectionCancelledBy]
+  closedBy: [WorkorderConnectionClosedBy]
+  closedOn: [WorkorderConnectionClosedOn]
+  UH__Contact__r: [WorkorderConnectionUH__Contact__r]
+  createdBy: [WorkorderConnectionCreatedBy]
+  UH__Description__c: [WorkorderConnectionUH__Description__c]
+  UH__Deadline__c: [WorkorderConnectionUH__Deadline__c]
+  invoiceAmount: [WorkorderConnectionInvoiceAmount]
+  invoiceDate: [WorkorderConnectionInvoiceDate]
+  InvoiceRef: [WorkorderConnectionInvoiceRef]
+  lastUpdatedTime: [WorkorderConnectionLastUpdatedTime]
+  lastModifiedBy: [WorkorderConnectionLastModifiedBy]
+  owner: [WorkorderConnectionOwner]
+  UH__productInPlace__r: [WorkorderConnectionUH__productInPlace__r]
+  parentWo: [WorkorderConnectionParentWo]
+  UH__startTime__c: [WorkorderConnectionUH__startTime__c]
+  UH__ServicePlace__r: [WorkorderConnectionUH__ServicePlace__r]
+  Id: [WorkorderConnectionId]
+  UH__Status__c: [WorkorderConnectionUH__Status__c]
+  statusesMap: [WorkorderConnectionStatusesMap]
+  UH__Technician__r: [WorkorderConnectionUH__Technician__r]
+}
+
+input WorkorderInput {
+  Name: String!
+  Comments: String
+  dateCancelled: DateTime
+  cancelledBy: ID
+  closedBy: ID
+  closedOn: DateTime
+  UH__Contact__r: ID
+  createdBy: ID
+  UH__Description__c: String!
+  UH__Deadline__c: DateTime
+  invoiceAmount: Float
+  invoiceDate: DateTime
+  InvoiceRef: String
+  lastUpdatedTime: DateTime
+  lastModifiedBy: ID
+  owner: ID
+  UH__productInPlace__r: ID
+  parentWo: ID
+  UH__startTime__c: DateTime
+  UH__ServicePlace__r: ID
+  Id: String
+  UH__Status__c: ENUM_WORKORDER_UH__STATUS__C!
+  statusesMap: String
+  UH__Technician__r: ID
+}

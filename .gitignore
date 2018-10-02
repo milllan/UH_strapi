@@ -104,7 +104,5 @@ coverage
 
 
 #############
-plugins
-/plugins
 /admin/node_modules
 /admin/admin/build
