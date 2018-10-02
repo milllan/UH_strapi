@@ -65,11 +65,8 @@ $RECYCLE.BIN/
 # Logs and databases
 ############################
 
-.tmp
 *.log
 *.sql
-*.sqlite
-*.sqlite3
 
 
 ############################
@@ -99,12 +96,6 @@ node_modules
 # Tests
 ############################
 
+test
 testApp
 coverage
-
-
-#############
-plugins
-/plugins
-/admin/node_modules
-/admin/admin/build
