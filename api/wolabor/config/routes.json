@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/wolabor",
+      "handler": "Wolabor.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/wolabor/count",
+      "handler": "Wolabor.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/wolabor/:_id",
+      "handler": "Wolabor.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/wolabor",
+      "handler": "Wolabor.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/wolabor/:_id",
+      "handler": "Wolabor.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/wolabor/:_id",
+      "handler": "Wolabor.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

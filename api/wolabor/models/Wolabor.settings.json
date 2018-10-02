@@ -1,0 +1,38 @@
+{
+  "connection": "default",
+  "collectionName": "UH__WO_Labor__c",
+  "info": {
+    "name": "wolabor",
+    "description": "WO Labor",
+    "mainField": "Name"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "UH__Cost__c": {
+      "type": "float",
+      "required": true
+    },
+    "UH__totalCost__c": {
+      "type": "float"
+    },
+    "UH__hoursCount__c": {
+      "type": "float",
+      "required": true
+    },
+    "UH__workOrder__r": {
+      "model": "workorder"
+    },
+    "UH__Labor__r": {
+      "model": "product"
+    },
+    "Id": {
+      "default": "",
+      "type": "string"
+    }
+  }
+}

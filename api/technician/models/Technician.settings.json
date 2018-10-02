@@ -1,0 +1,34 @@
+{
+  "connection": "default",
+  "collectionName": "UH__Technician__c",
+  "info": {
+    "name": "technician",
+    "description": "",
+    "mainField": "Name"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "UH__Active__c": {
+      "type": "boolean"
+    },
+    "UH__address__c": {
+      "maxLength": 255,
+      "type": "string"
+    },
+    "UH__User__r": {
+      "model": "user",
+      "plugin": "users-permissions"
+    },
+    "Name": {
+      "maxLength": 80,
+      "type": "string",
+      "required": true
+    },
+    "Id": {
+      "default": "",
+      "type": "string"
+    }
+  }
+}

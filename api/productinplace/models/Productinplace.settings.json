@@ -1,0 +1,84 @@
+{
+  "connection": "default",
+  "collectionName": "UH__ProductInPlace__c",
+  "info": {
+    "name": "productInPlace",
+    "description": "",
+    "mainField": "Name"
+  },
+  "options": {
+    "timestamps": true,
+    "minimize": true
+  },
+  "attributes": {
+    "Name": {
+      "maxLength": 80,
+      "type": "string"
+    },
+    "installedDate": {
+      "type": "date"
+    },
+    "UH__Product__r": {
+      "model": "product"
+    },
+    "UH__code__c": {
+      "type": "string"
+    },
+    "UH__description__c": {
+      "maxLength": 255,
+      "type": "text"
+    },
+    "createdBy": {
+      "model": "user",
+      "plugin": "users-permissions"
+    },
+    "lastModifiedBy": {
+      "model": "user",
+      "plugin": "users-permissions"
+    },
+    "workorders": {
+      "collection": "workorder",
+      "via": "UH__productInPlace__r"
+    },
+    "Id": {
+      "type": "string"
+    },
+    "UH__ServicePlace__r": {
+      "model": "serviceplace",
+      "via": "UH__productInPlace__r"
+    },
+    "UH__Contact__r": {
+      "model": "contact"
+    },
+    "UH__Status__c": {
+      "type": "enumeration",
+      "enum": [
+        "Shipped",
+        "Installed",
+        "Returned",
+        "In Transit"
+      ]
+    },
+    "UH__installedDate__c": {
+      "type": "date"
+    },
+    "UH__purchaseDate__c": {
+      "type": "date"
+    },
+    "UH__shippedDate__c": {
+      "type": "date"
+    },
+    "UH__endDate__c": {
+      "type": "date"
+    },
+    "UH__Quantity__c": {
+      "type": "decimal",
+      "default": 1
+    },
+    "UH__serial__c": {
+      "default": "",
+      "unique": true,
+      "type": "string"
+    }
+  }
+}

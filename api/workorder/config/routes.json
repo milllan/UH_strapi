@@ -1,0 +1,71 @@
+{
+  "routes": [
+    {
+      "_comment": "custom GET ruta ... ",
+      "method": "GET",
+      "path": "/woResourceCtrl/:_id",
+      "handler": "Workorder.findOne_woResourceCtrl",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "_comment": "custom PUT ruta ... ",
+      "method": "PUT",
+      "path": "/woResourceCtrl/:_id",
+      "handler": "Workorder.update_woResourceCtrl",
+      "config": {
+        "policies": []
+      }
+    },
+
+    {
+      "method": "GET",
+      "path": "/workorder",
+      "handler": "Workorder.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/workorder/count",
+      "handler": "Workorder.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/workorder/:_id",
+      "handler": "Workorder.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/workorder",
+      "handler": "Workorder.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/workorder/:_id",
+      "handler": "Workorder.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/workorder/:_id",
+      "handler": "Workorder.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

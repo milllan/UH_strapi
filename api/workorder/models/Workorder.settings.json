@@ -1,0 +1,109 @@
+{
+  "connection": "default",
+  "collectionName": "UH__WorkOrder__c",
+  "info": {
+    "name": "workorder",
+    "description": "",
+    "mainField": "Name"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Comments": {
+      "maxLength": 4000,
+      "type": "text"
+    },
+    "dateCancelled": {
+      "type": "date"
+    },
+    "cancelledBy": {
+      "model": "user",
+      "plugin": "users-permissions"
+    },
+    "closedBy": {
+      "model": "user",
+      "plugin": "users-permissions"
+    },
+    "closedOn": {
+      "type": "date"
+    },
+    "UH__Contact__r": {
+      "model": "contact"
+    },
+    "createdBy": {
+      "model": "user",
+      "plugin": "users-permissions"
+    },
+    "UH__Description__c": {
+      "maxLength": 255,
+      "type": "text",
+      "required": true
+    },
+    "UH__Deadline__c": {
+      "type": "date"
+    },
+    "invoiceAmount": {
+      "type": "float"
+    },
+    "invoiceDate": {
+      "type": "date"
+    },
+    "InvoiceRef": {
+      "type": "string"
+    },
+    "lastUpdatedTime": {
+      "type": "date"
+    },
+    "lastModifiedBy": {
+      "model": "user",
+      "plugin": "users-permissions"
+    },
+    "owner": {
+      "model": "user",
+      "plugin": "users-permissions"
+    },
+    "UH__productInPlace__r": {
+      "model": "productinplace",
+      "via": "workorders"
+    },
+    "parentWo": {
+      "model": "workorder"
+    },
+    "UH__startTime__c": {
+      "type": "date"
+    },
+    "UH__ServicePlace__r": {
+      "model": "serviceplace",
+      "via": "workorders"
+    },
+    "Id": {
+      "type": "string"
+    },
+    "UH__Status__c": {
+      "default": "Open",
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Open",
+        "Accept",
+        "Travelling",
+        "Arrived_on_place",
+        "Completed",
+        "Closed",
+        "Reject"
+      ]
+    },
+    "statusesMap": {
+      "type": "json"
+    },
+    "UH__Technician__r": {
+      "model": "technician"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "connection": "default",
+  "collectionName": "contact",
+  "info": {
+    "name": "contact",
+    "description": "Contact",
+    "mainField": "Name"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "maxLength": 32000,
+      "type": "text"
+    },
+    "Email": {
+      "unique": true,
+      "type": "email"
+    },
+    "Phone": {
+      "type": "string"
+    },
+    "owner": {
+      "model": "user",
+      "plugin": "users-permissions"
+    },
+    "createdBy": {
+      "model": "user",
+      "plugin": "users-permissions"
+    },
+    "Id": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "routes": [
+    {
+      "_comment": "custom GET ruta. Underscore fix za UH__Type__c ... ",
+      "method": "GET",
+      "path": "/product_/:_id",
+      "handler": "Product.findOne_",
+      "config": {
+        "policies": []
+      }
+    },
+
+    {
+      "method": "GET",
+      "path": "/product",
+      "handler": "Product.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/product/count",
+      "handler": "Product.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/product/:_id",
+      "handler": "Product.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/product",
+      "handler": "Product.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/product/:_id",
+      "handler": "Product.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/product/:_id",
+      "handler": "Product.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

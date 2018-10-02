@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/wopart",
+      "handler": "Wopart.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/wopart/count",
+      "handler": "Wopart.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/wopart/:_id",
+      "handler": "Wopart.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/wopart",
+      "handler": "Wopart.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/wopart/:_id",
+      "handler": "Wopart.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/wopart/:_id",
+      "handler": "Wopart.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

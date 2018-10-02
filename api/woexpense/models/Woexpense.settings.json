@@ -1,0 +1,46 @@
+{
+  "connection": "default",
+  "collectionName": "UH__WO_Expense__c",
+  "info": {
+    "name": "woexpense",
+    "description": "WO Expense",
+    "mainField": "Name"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "unique": true
+    },
+    "UH__expenseType__c": {
+      "type": "enumeration",
+      "enum": [
+        "Parking",
+        "Toll",
+        "Meals",
+        "Lodging",
+        "Mileage"
+      ]
+    },
+    "UH__Quantity__c": {
+      "default": 1,
+      "type": "integer",
+      "required": true
+    },
+    "UH__Cost__c": {
+      "type": "decimal"
+    },
+    "UH__totalCost__c": {
+      "type": "decimal"
+    },
+    "UH__workOrder__r": {
+      "model": "workorder"
+    },
+    "Id": {
+      "default": "",
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/productinplace",
+      "handler": "Productinplace.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/productinplace/count",
+      "handler": "Productinplace.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/productinplace/:_id",
+      "handler": "Productinplace.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/productinplace",
+      "handler": "Productinplace.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/productinplace/:_id",
+      "handler": "Productinplace.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/productinplace/:_id",
+      "handler": "Productinplace.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

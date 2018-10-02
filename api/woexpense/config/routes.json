@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/woexpense",
+      "handler": "Woexpense.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/woexpense/count",
+      "handler": "Woexpense.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/woexpense/:_id",
+      "handler": "Woexpense.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/woexpense",
+      "handler": "Woexpense.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/woexpense/:_id",
+      "handler": "Woexpense.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/woexpense/:_id",
+      "handler": "Woexpense.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

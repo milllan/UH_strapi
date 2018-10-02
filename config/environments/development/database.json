@@ -1,0 +1,12 @@
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "strapi-hook-mongoose",
+      "settings": {
+        "client": "mongo",
+        "uri": "mongodb://strapi:Sdexter3@cluster0-shard-00-00-sqc4t.mongodb.net:27017,cluster0-shard-00-01-sqc4t.mongodb.net:27017,cluster0-shard-00-02-sqc4t.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true"
+      }
+    }
+  }
+}

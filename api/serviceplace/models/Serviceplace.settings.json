@@ -1,0 +1,51 @@
+{
+  "connection": "default",
+  "collectionName": "UH__ServicePlace__c",
+  "info": {
+    "name": "serviceplace",
+    "description": "",
+    "mainField": "Name"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "maxLength": 80,
+      "type": "string",
+      "required": true
+    },
+    "UH__Address__c": {
+      "maxLength": 255,
+      "type": "string",
+      "required": true
+    },
+    "UH__Phone__c": {
+      "type": "string"
+    },
+    "UH__postalCode__c": {
+      "type": "string"
+    },
+    "UH__Contact__r": {
+      "model": "contact"
+    },
+    "workorders": {
+      "collection": "workorder",
+      "via": "UH__ServicePlace__r"
+    },
+    "Id": {
+      "type": "string"
+    },
+    "UH__productInPlace__r": {
+      "collection": "productinplace",
+      "via": "UH__ServicePlace__r"
+    },
+    "UH__position__c": {
+      "default": "",
+      "type": "json"
+    },
+    "UH__City__r": {
+      "model": "city"
+    }
+  }
+}

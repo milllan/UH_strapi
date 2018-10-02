@@ -1,0 +1,67 @@
+{
+  "connection": "default",
+  "collectionName": "product",
+  "info": {
+    "name": "product",
+    "description": "",
+    "mainField": "Name"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "price": {
+      "type": "float"
+    },
+    "Id": {
+      "type": "string"
+    },
+    "UH__Type__c": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "General",
+        "Installation",
+        "Repairment",
+        "Replacement",
+        "Lunch",
+        "Dinner",
+        "Gas",
+        "Tolls",
+        "Overnight",
+        "Spare_part",
+        "Accessories",
+        "Presents"
+      ],
+      "default": "General"
+    },
+    "RecordTypeId": {
+      "default": "Product",
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Product",
+        "Expense",
+        "Labor",
+        "Part"
+      ]
+    },
+    "ProductCode": {
+      "default": "",
+      "maxLength": 255,
+      "type": "string"
+    },
+    "IsActive": {
+      "default": true,
+      "type": "boolean",
+      "required": true
+    }
+  }
+}

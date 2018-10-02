@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/technician",
+      "handler": "Technician.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/technician/count",
+      "handler": "Technician.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/technician/:_id",
+      "handler": "Technician.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/technician",
+      "handler": "Technician.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/technician/:_id",
+      "handler": "Technician.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/technician/:_id",
+      "handler": "Technician.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

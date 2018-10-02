@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/serviceplace",
+      "handler": "Serviceplace.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/serviceplace/count",
+      "handler": "Serviceplace.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/serviceplace/:_id",
+      "handler": "Serviceplace.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/serviceplace",
+      "handler": "Serviceplace.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/serviceplace/:_id",
+      "handler": "Serviceplace.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/serviceplace/:_id",
+      "handler": "Serviceplace.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

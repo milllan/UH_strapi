@@ -1,0 +1,39 @@
+{
+  "connection": "default",
+  "collectionName": "UH__WO_Part__c",
+  "info": {
+    "name": "wopart",
+    "description": "WO Part",
+    "mainField": "Name"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "UH__Cost__c": {
+      "type": "float"
+    },
+    "UH__totalCost__c": {
+      "type": "float"
+    },
+    "UH__Quantity__c": {
+      "type": "float"
+    },
+    "UH__Part__r": {
+      "model": "product"
+    },
+    "UH__workOrder__r": {
+      "model": "workorder"
+    },
+    "UH__Department__c": {
+      "type": "string"
+    },
+    "Id": {
+      "default": "",
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "connection": "default",
+  "collectionName": "country",
+  "info": {
+    "name": "country",
+    "description": "",
+    "mainField": "cca2"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "default": "",
+      "type": "json"
+    },
+    "latlng": {
+      "default": "",
+      "type": "json"
+    },
+    "altSpellings": {
+      "default": "",
+      "type": "json"
+    },
+    "area": {
+      "default": "",
+      "max": 10000,
+      "type": "integer"
+    },
+    "borders": {
+      "default": "",
+      "type": "json"
+    },
+    "callingCode": {
+      "default": "",
+      "type": "json"
+    },
+    "capital": {
+      "default": "",
+      "type": "string"
+    },
+    "cca2": {
+      "default": "",
+      "type": "string"
+    },
+    "cca3": {
+      "default": "",
+      "type": "string"
+    },
+    "ccn3": {
+      "default": "",
+      "type": "string"
+    },
+    "cioc": {
+      "default": "",
+      "type": "string"
+    },
+    "currency": {
+      "default": "",
+      "type": "json"
+    },
+    "demonym": {
+      "default": "",
+      "type": "string"
+    },
+    "landlocked": {
+      "default": false,
+      "type": "boolean"
+    },
+    "languages": {
+      "default": "",
+      "type": "json"
+    },
+    "region": {
+      "default": "",
+      "type": "string"
+    },
+    "subregion": {
+      "default": "",
+      "type": "string"
+    },
+    "tld": {
+      "default": "",
+      "type": "json"
+    },
+    "translations": {
+      "default": "",
+      "type": "json"
+    }
+  }
+}
