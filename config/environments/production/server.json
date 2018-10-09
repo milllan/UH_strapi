@@ -1,5 +1,5 @@
 {
-  "host": "https://uhstrapi.app.sajtweb.net",
+  "host": "uhstrapi.app.sajtweb.net",
   "port": "${process.env.PORT || 1337}",
   
   "autoReload": {
