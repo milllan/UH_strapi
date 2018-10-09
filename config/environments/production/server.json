@@ -1,6 +1,7 @@
 {
-  "host": "localhost",
+  "host": "https://uhstrapi.app.sajtweb.net",
   "port": "${process.env.PORT || 1337}",
+  
   "autoReload": {
     "enabled": false
   },
