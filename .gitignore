@@ -106,3 +106,5 @@ coverage
 #############
 /admin/node_modules
 /admin/admin/build
+package-lock.json
+/admin/package-lock.json
